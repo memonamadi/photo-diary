@@ -1,0 +1,19 @@
+body {
+  background: #fafafa;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+header {
+  width: 100%;
+  padding: 40px 0;
+}
+
+header h1 {
+  font-size: 1.8em;
+}
+
+.grid-container img {
+  padding: 3px 5px;
+}
