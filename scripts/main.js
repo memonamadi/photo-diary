@@ -15,11 +15,32 @@
 
 			img_src = "https://farm" + item.farm + ".staticflickr.com/" + item.server + "/" + item.id + "_" + item.secret + "_c.jpg";
 			img_url = "https://www.flickr.com/photos/" + item.owner + "/" + item.id;
-			img_thumbnail = ("<a href='" + img_url + "'>");
+			img_thumbnail = ("<div class='grid-item'><a href='" + img_url + "'>");
 			img_thumbnail += ("<img src='" + img_src + "'/>");
-			img_thumbnail += ("</a>");
+			img_thumbnail += ("</a></div>");
 			$(img_thumbnail).appendTo(".grid-container");
 		});
+
+		if(document.documentElement.clientWidth > 520){
+			var $grid = $('.grid').imagesLoaded( function() {
+	    		$grid.masonry({
+	      			itemSelector: '.grid-item',
+	      			columnWidth: 500,
+	      			isFitWidth: true
+	    		}); 
+	  		});
+	  	} else if(document.documentElement.clientWidth < 520){
+	  		var $grid = $('.grid').imagesLoaded( function() {
+	    		$grid.masonry({
+	      			itemSelector: '.grid-item',
+	      			columnWidth: 300,
+	      			isFitWidth: true
+	    		}); 
+	  		});
+	  	}
 	});
-	
 })();
+
+  
+
+
